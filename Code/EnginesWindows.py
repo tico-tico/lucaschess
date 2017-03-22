@@ -339,11 +339,21 @@ def dicMotoresFixedElo():
                                       )
             ),
             ( "rodentIII", "PersonalityFile", (
-                                                    ("personalities/school/amy.txt", "p: Amy / 1000", 1000),
                                                     ("personalities/club/mark.txt", "p: Mark / 1500", 1500),
                                                     ("personalities/club/sam.txt", "p: Sam / 1500", 1500),
+                                                    ("personalities/famous/anand.txt", "p: Anand / 2700", 2700),
                                                     ("personalities/masters/victor.txt", "p: Victor / 2250", 2250),
-                                                    ("personalities/famous/Anand.txt", "p: Anand / 2700", 2700),
+                                                    ("personalities/school/amy.txt", "p: Amy / weak, aggressive, slow", 950),
+                                                    ("personalities/school/andy.txt", "p: Andy / weak, attacker", 950),
+                                                    ("personalities/school/ben.txt", "p: Ben / weak, balanced, precise eval for his strength range", 950),
+                                                    ("personalities/school/chris.txt", "p: Chris / weak, classical pst + restraint", 950),
+                                                    ("personalities/school/dory.txt", "p: Dory / weak, defense oriented", 950),
+                                                    ("personalities/school/frank.txt", "p: Frank / weak, rushes forward", 950),
+                                                    ("personalities/school/nora.txt", "p: Nora / weak, overvalues knights, knows how to play with them", 950),
+                                                    ("personalities/school/pam.txt", "p: Pam / overvalues pawns, cares for pawn structure", 950),
+                                                    ("personalities/school/rita.txt", "p: Rita / weak, overvalues rooks", 950),
+                                                    ("personalities/school/stan.txt", "p: Stan / likes to simplify", 950),
+                                                    ("personalities/school/sue.txt", "p: Sue / weak to moderate, likes to sacrifice", 950),
                                               )
             ),
     ):
@@ -351,7 +361,7 @@ def dicMotoresFixedElo():
             cm = d[nm].clona()
             cm.ordenUCI(option_name, person[0])
             cm.nombre += " (%s)" % person[1]
-            cm.clave += " (%s)" % person[1]
+            cm.clave += " (%s)" % person[0]
             if person[2] not in dic:
                 dic[person[2]] = []
             dic[person[2]].append(cm)
